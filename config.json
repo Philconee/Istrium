@@ -35,9 +35,13 @@
   "peers": {
     "minimumNetworkReach": 1,
     "list": [
-      {
-        "ip": "127.0.0.1",
-        "port": 4000
+	{
+	    "ip":"127.0.0.1",
+	    "port": 4100
+	},
+	{
+        "ip": "164.132.197.122",
+        "port": 4100
       }
     ],
     "blackList": [],
@@ -53,9 +57,11 @@
     }
   },
   "forging": {
-    "coldstart": 60,
+    "coldstart": 0,
     "force": true,
-    "secret": [],
+    "secret": [
+      "bench floor lake lottery loud village sheriff grab silent spread change man"
+    ],
     "access": {
       "whiteList": [
         "127.0.0.1"
@@ -67,7 +73,7 @@
     "loadPerIteration": 5000
   },
   "modules": {
-      "example":"./optional/example.js"
+    "example": "./optional/example.js"
   },
   "ssl": {
     "enabled": false,
@@ -78,5 +84,5 @@
       "cert": "./ssl/ark.crt"
     }
   },
-  "nethash": "31a3d2f549dcb0ce6856b5d440cb7a1402d766f290a89d408f155f937f106f8c"
+  "nethash": "e85ac444396c4fb4b8cf730ecebb0eda83c404a0be63c0ca7ece69534f8ab7ee"
 }

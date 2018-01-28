@@ -53,5 +53,19 @@
       "symbol":"DѦ",
       "explorer":"http://dexplorer.ark.io"
     }
-  }
+  },
+    "Istrium": {
+	"messagePrefix": "Istrium",
+	"bip32": {
+	    "public": 70617039,
+	    "private": 70615956
+	},
+	"pubKeyHash": 30,
+	"wif": 187,
+	"client": {
+	    "token": "ISTR",
+	    "symbol": "IU",
+	    "explorer": "http://164.132.197.122"
+	}
+    }
 }
