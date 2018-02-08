@@ -124,15 +124,7 @@ d.on('error', function (err) {
 d.run(function () {
 	var modules = [];
 	console.log(colors.cyan("\n\
-      {_       {_______    {__   {__       {___     {__    {____     {_____    {________\n\
-     {_ __     {__    {__  {__  {__        {_ {__   {__  {__    {__  {__   {__ {__\n\
-    {_  {__    {__    {__  {__ {__         {__ {__  {__{__        {__{__    {__{__\n\
-   {__   {__   {_ {__      {_ {_           {__  {__ {__{__        {__{__    {__{______\n\
-  {______ {__  {__  {__    {__  {__        {__   {_ {__{__        {__{__    {__{__\n\
- {__       {__ {__    {__  {__   {__       {__    {_ __  {__     {__ {__   {__ {__\n\
-{__         {__{__      {__{__     {__     {__      {__    {____     {_____    {________\n\
-\n\n\
-	                     W E L C O M E  A B O A R D !\n\
+	                     ISTRIUM NODE !\n\
 \n\
 "));
 	async.auto({
@@ -341,12 +333,12 @@ d.run(function () {
 			});
 
 			scope.network.server.listen(scope.config.port, scope.config.address, function (err) {
-				scope.logger.info('# Ark node server started on: ' + scope.config.address + ':' + scope.config.port);
+				scope.logger.info('# Node server started on: ' + scope.config.address + ':' + scope.config.port);
 
 				if (!err) {
 					if (scope.config.ssl.enabled) {
 						scope.network.https.listen(scope.config.ssl.options.port, scope.config.ssl.options.address, function (err) {
-							scope.logger.info('Ark https started: ' + scope.config.ssl.options.address + ':' + scope.config.ssl.options.port);
+							scope.logger.info(' https started: ' + scope.config.ssl.options.address + ':' + scope.config.ssl.options.port);
 
 							cb(err, scope.network);
 						});
