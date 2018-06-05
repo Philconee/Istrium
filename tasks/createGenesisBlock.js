@@ -366,14 +366,27 @@ var genesisBlock = create({
 
 config.nethash = genesisBlock.payloadHash;
 
-fs.writeFile(output_dir+"/genesisBlock."+config.network+".json",JSON.stringify(genesisBlock, null, 2));
-fs.writeFile(output_dir+"/config."+config.network+".json",JSON.stringify(config, null, 2));
+fs.writeFile(output_dir+"/genesisBlock."+config.network+".json",JSON.stringify(genesisBlock, null, 2), (err) => {
+	if (err) throw err;
+
+    console.log('=> done  ');
+});
+
+fs.writeFile(output_dir+"/config."+config.network+".json",JSON.stringify(config, null, 2), (err) => {
+	if (err) throw err;
+
+    console.log('=> done  ');
+});
 
 // add delegates passphrases in config for testing on one single node
 for(var i=0;i<51;i++){
 	config.forging.secret.push(delegates[i].passphrase);
 }
-fs.writeFile(private_dir+"/config."+config.network+".autoforging.json", JSON.stringify(config, null, 2));
+fs.writeFile(private_dir+"/config."+config.network+".autoforging.json", JSON.stringify(config, null, 2), (err) => {
+	if (err) throw err;
+
+    console.log('=> done  ');
+});
 
 var forging = [];
 seed_peers.forEach(function(seed){
@@ -387,8 +400,20 @@ for(var i=0;i<51;i++){
 
 seed_peers.forEach(function(peer,index){
   config.forging.secret = forging[index];
-  fs.writeFile(private_dir+"/config."+config.network+"."+peer.ip+".json", JSON.stringify(config, null, 2));
+  fs.writeFile(private_dir+"/config."+config.network+"."+peer.ip+".json", JSON.stringify(config, null, 2), (err) => {
+	if (err) throw err;
+
+    console.log('=> done  ');
+});
 });
 
-fs.writeFile(private_dir+"/delegatesPassphrases."+config.network+".json", JSON.stringify(delegates, null, 2));
-fs.writeFile(private_dir+"/genesisPassphrase."+config.network+".json", JSON.stringify(genesis, null, 2));
+fs.writeFile(private_dir+"/delegatesPassphrases."+config.network+".json", JSON.stringify(delegates, null, 2),  (err) => {
+	if (err) throw err;
+
+    console.log('=> done  ');
+});
+fs.writeFile(private_dir+"/genesisPassphrase."+config.network+".json", JSON.stringify(genesis, null, 2), (err) => {
+	if (err) throw err;
+
+    console.log('=> done  ');
+});
